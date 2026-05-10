@@ -1,46 +1,59 @@
 # ArcKit for OpenCode
 
-Enterprise Architecture Governance & Vendor Procurement Toolkit for OpenCode.
+OpenCode extension for ArcKit, an enterprise architecture governance and vendor
+procurement toolkit.
 
-## Overview
+This repository is generated from the main ArcKit source repository:
+https://github.com/tractorjuice/arc-kit
 
-ArcKit provides a comprehensive set of commands for enterprise architects to manage:
-- Architecture principles and governance
-- Requirements documentation
-- Vendor RFP/SOW generation
-- Vendor evaluation and selection
-- Design review processes (HLD/DLD)
-- Requirements traceability
+## What Is Included
 
-## Installation
+- 116 ArcKit commands under `commands/`
+- 10 research and specialist agents under `agents/`
+- 112 document templates under `templates/`
+- Handoff schemas and scoring rubrics under `schemas/`
+- Helper scripts under `scripts/`
+- MCP configuration in `opencode.json`
+
+## Install
+
+Use the ArcKit CLI to scaffold a project configured for OpenCode:
 
 ```bash
-# Install with pip
 pip install git+https://github.com/tractorjuice/arc-kit.git
+arckit init my-project --ai opencode
+cd my-project
+opencode
+```
 
-# Or with uv
+Or with `uv`:
+
+```bash
 uv tool install arckit-cli --from git+https://github.com/tractorjuice/arc-kit.git
-
-# Or run without installing
-uvx --from git+https://github.com/tractorjuice/arc-kit.git arckit init my-project
-
-# Create a new architecture governance project
-arckit init payment-modernization --ai opencode
-
-# Or initialize in current directory
-arckit init . --ai opencode
+arckit init my-project --ai opencode
 ```
 
 ## Usage
 
-Once installed, ArcKit commands are available directly in OpenCode:
+ArcKit commands are available in OpenCode with `/arckit.<command>`:
 
-```
-/arckit.plan            # Create project plan
-/arckit.principles      # Establish architecture principles
-/arckit.requirements    # Define requirements
-/arckit.sow             # Generate Statement of Work
-/arckit.evaluate        # Evaluate vendor proposals
+```text
+/arckit.plan
+/arckit.principles
+/arckit.requirements
+/arckit.risk
+/arckit.sow
+/arckit.evaluate
+/arckit.health
 ```
 
-See [ArcKit Documentation](https://github.com/tractorjuice/arc-kit) for full details.
+## Updating
+
+This standalone repository is synced from `arc-kit` releases. Pull the latest
+commit from this repository, or regenerate a project with the latest ArcKit CLI.
+
+## Documentation
+
+- Main project: https://github.com/tractorjuice/arc-kit
+- Website: https://arckit.org
+- Releases: https://github.com/tractorjuice/arc-kit/releases
